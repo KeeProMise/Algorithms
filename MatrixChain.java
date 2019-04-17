@@ -1,3 +1,6 @@
+/**
+    矩阵链乘法，输入格式为 <1,2,3,4,5>加不加“<,>”都可以
+ */
 import java.util.Scanner;
 
 public class MatrixChain {
@@ -5,6 +8,7 @@ public class MatrixChain {
         Scanner sc = new Scanner(System.in);
         String [] str = sc.nextLine().replace("<","").replace(">","").split(",");
         int n = str.length;
+        //m,s矩阵保存每次计算结果
         int [][] m = new int [n-1][n-1];
         int [][] s = new int [n-1][n-1];
         int [] p = new int [n];
@@ -20,6 +24,10 @@ public class MatrixChain {
        
         PRINT_OPTIMAL_PARENS(s,0,n-2);
     }
+   /*
+    实现矩阵链乘法
+    参考自顶向下实现算法。
+    */
     public static void MATRIX_CHAIN_ORDER(int [] p,int [][]m,int [][] s,int i,int j){
        
         if(i>j) return ;
